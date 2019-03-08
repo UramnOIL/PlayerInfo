@@ -1,0 +1,22 @@
+name: PlayerInfo
+api: [3.5]
+version: 0.1.0
+load: POSTWORLD
+author: UramnOIL
+description: I'm using the new FORM-API!
+
+permissions:
+  playerinfo:
+    default: true
+    description: 'Allows you to use the PlayerInfo things'
+    children:
+      playerinfo.command:
+        default: true
+        description: 'Allows you to use my commands'
+        children:
+          playerinfo.command.playerlist:
+            default: true
+            description: 'Allows you to execute PlayerListCommand'
+      playerinfo.edit:
+        default: op
+        description: "Allows you to edit Player's State on Form"
