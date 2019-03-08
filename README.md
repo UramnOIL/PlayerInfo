@@ -1,0 +1,2 @@
+#PlayerInfo
+EasyFormsを使いたかった＆pmmpリハビリ
