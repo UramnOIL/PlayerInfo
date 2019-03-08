@@ -1,6 +1,7 @@
 name: PlayerInfo
 api: [3.5]
 version: 0.1.0
+depend: [EasyForms]
 main: uramnoil\pmmp\playerinfo\PlayerInfo
 load: POSTWORLD
 author: UramnOIL

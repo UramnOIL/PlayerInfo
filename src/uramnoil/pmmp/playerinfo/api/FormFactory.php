@@ -26,13 +26,15 @@ class FormFactory implements IFormFactory
         $players = Server::getInstance()->getOnlinePlayers();
         $menu = [];
 
-        foreach( $players as $player )
+        $num = 0;
+        foreach( $players as $key => $player )
         {
             $menu[] = new Button( $player->getName() );
+            $players[$num++] = $player;
         }
 
         return new MenuForm("PlayerList", "Choose Player", $menu,
-            function( Player $player, Button $selected ) use( $players )
+            function( Player $player, Button $selected ) use( $players ): void
             {
                 $target = $players[ $selected->getValue() ];
 

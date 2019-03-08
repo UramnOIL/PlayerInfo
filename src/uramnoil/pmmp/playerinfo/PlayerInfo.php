@@ -11,20 +11,19 @@ namespace uramnoil\pmmp\playerinfo;
 
 use pocketmine\plugin\PluginBase;
 use uramnoil\pmmp\playerinfo\api\FormFactory;
+use uramnoil\pmmp\playerinfo\api\IFormFactory;
 use uramnoil\pmmp\playerinfo\command\PlayerListCommand;
-use uramnoil\pmmp\playerinfo\presenter\IPresener;
-use uramnoil\pmmp\playerinfo\presenter\Presenter;
 
 final class PlayerInfo extends PluginBase
 {
     /**
-     * @var IPresener
+     * @var IFormFactory
      */
     private $presenter;
 
     public function onLoad()
     {
-        $this->presenter = new Presenter( new FormFactory() );
+        $this->presenter = new FormFactory();
     }
 
     public function onEnable()
@@ -33,9 +32,9 @@ final class PlayerInfo extends PluginBase
     }
 
     /**
-     * @return IPresener
+     * @return IFormFactory
      */
-    public function getPresenter(): IPresener
+    public function getPresenter(): IFormFactory
     {
         return $this->presenter;
     }

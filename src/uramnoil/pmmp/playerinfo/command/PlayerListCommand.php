@@ -41,17 +41,17 @@ class PlayerListCommand extends Command
             return false;
         }
 
-        if( $this->testPermission( $sender ) )
+        /*if( $this->testPermission( $sender ) )
         {
             return false;
-        }
+        }*/
 
         if( !$sender instanceof Player )
         {
             $sender->sendMessage("Please use in game");
         }
 
-        $this->plugin->getPresenter()->sendPlayerListForm( $sender );
+        $this->plugin->getFactory()->sendPlayerListForm( $sender );
 
         return true;
     }
