@@ -25,4 +25,10 @@ interface IFormFactory
      * @return CustomForm
      */
     public function createPlayerInfoForm( Player $target ): CustomForm;
+
+    /**
+     * @param Player $target
+     * @return CustomForm
+     */
+    public function createEditPlayerForm( Player $target ): CustomForm;
 }
