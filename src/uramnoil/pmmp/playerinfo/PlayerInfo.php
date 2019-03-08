@@ -19,11 +19,11 @@ final class PlayerInfo extends PluginBase
     /**
      * @var IFormFactory
      */
-    private $presenter;
+    private $factory;
 
     public function onLoad()
     {
-        $this->presenter = new FormFactory();
+        $this->factory = new FormFactory();
     }
 
     public function onEnable()
@@ -34,8 +34,8 @@ final class PlayerInfo extends PluginBase
     /**
      * @return IFormFactory
      */
-    public function getPresenter(): IFormFactory
+    public function getFactory(): IFormFactory
     {
-        return $this->presenter;
+        return $this->factory;
     }
 }

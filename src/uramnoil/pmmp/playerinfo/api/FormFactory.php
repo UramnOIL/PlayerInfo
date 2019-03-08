@@ -14,14 +14,11 @@ use Frago9876543210\EasyForms\elements\Input;
 use Frago9876543210\EasyForms\elements\Label;
 use Frago9876543210\EasyForms\elements\Slider;
 use Frago9876543210\EasyForms\elements\StepSlider;
-use Frago9876543210\EasyForms\elements\Toggle;
 use Frago9876543210\EasyForms\forms\CustomForm;
 use Frago9876543210\EasyForms\forms\CustomFormResponse;
 use Frago9876543210\EasyForms\forms\MenuForm;
-use Frago9876543210\EasyForms\forms\ModalForm;
 use pocketmine\Player;
 use pocketmine\Server;
-use uramnoil\pmmp\playerinfo\command\PlayerListCommand;
 
 class FormFactory implements IFormFactory
 {
@@ -64,7 +61,7 @@ class FormFactory implements IFormFactory
             {
                 $player->sendForm( $this->createPlayerListForm() );
             },
-            function( Player $player )
+            function( Player $player ): void
             {
                 $player->sendForm( $this->createPlayerListForm() );
             }
@@ -95,7 +92,7 @@ class FormFactory implements IFormFactory
 
                 $player->sendForm( $this->createCompleteEditForm() );
             },
-            function( Player $player )
+            function( Player $player ): void
             {
                 $player->sendForm( $this->createPlayerListForm() );
             }
@@ -171,10 +168,10 @@ class FormFactory implements IFormFactory
         $elements = [];
         $elements[] = new StepSlider( "GAMEMODE", ["SURVIVAL", "CREATIVE", "ADVENTURE", "SPECTATOR"], $target->getGamemode() );
         $elements[] = new Label( "PING: " . $target->getPing() );
-        $elements[] = new Slider( "HP", 0, 50, 0.5, $target->getHealth() );
-        $elements[] = new Slider( "MAXHP", 0, 50, 0.5, $target->getHealth() );
+        $elements[] = new Slider( "HP", 0, 100, 1, $target->getHealth() );
+        $elements[] = new Slider( "MAXHP", 0, 100, 1, $target->getHealth() );
         $elements[] = new Label( "ARMOR POINT: " . $target->getArmorPoints() );
-        $elements[] = new Slider( "FOOD", 0, 10, 0.5, $target->getFood() );
+        $elements[] = new Slider( "FOOD", 0, 20, 1, $target->getFood() );
         $elements[] = new Label( "EXP:" );
         $elements[] = new Label( "  LEVEL: " . $target->getXpLevel() );
         $elements[] = new Input( "  TOTAL", "NUMERIC ONRY", $target->getCurrentTotalXp() );

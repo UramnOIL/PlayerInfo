@@ -51,7 +51,7 @@ class PlayerListCommand extends Command
             $sender->sendMessage("Please use in game");
         }
 
-        $this->plugin->getFactory()->sendPlayerListForm( $sender );
+        $sender->sendForm( $this->plugin->getFactory()->createPlayerListForm() );
 
         return true;
     }
