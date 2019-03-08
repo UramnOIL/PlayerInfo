@@ -6,13 +6,14 @@
  * Time: 11:50
  */
 
-namespace uramnoil\pmmp\hellonewformapi;
+namespace uramnoil\pmmp\playerinfo;
 
 
 use pocketmine\plugin\PluginBase;
-use uramnoil\pmmp\hellonewformapi\api\FormFactory;
-use uramnoil\pmmp\hellonewformapi\presenter\IPresener;
-use uramnoil\pmmp\hellonewformapi\presenter\Presenter;
+use uramnoil\pmmp\playerinfo\api\FormFactory;
+use uramnoil\pmmp\playerinfo\command\PlayerListCommand;
+use uramnoil\pmmp\playerinfo\presenter\IPresener;
+use uramnoil\pmmp\playerinfo\presenter\Presenter;
 
 final class PlayerInfo extends PluginBase
 {
@@ -21,9 +22,14 @@ final class PlayerInfo extends PluginBase
      */
     private $presenter;
 
-    public function onEnable()
+    public function onLoad()
     {
         $this->presenter = new Presenter( new FormFactory() );
+    }
+
+    public function onEnable()
+    {
+        $this->getServer()->getCommandMap()->register( "PlayerInfo", new PlayerListCommand( $this ) );
     }
 
     /**

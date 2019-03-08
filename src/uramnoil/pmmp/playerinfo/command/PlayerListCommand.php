@@ -6,13 +6,13 @@
  * Time: 13:31
  */
 
-namespace uramnoil\pmmp\hellonewformapi\command;
+namespace uramnoil\pmmp\playerinfo\command;
 
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
-use uramnoil\pmmp\hellonewformapi\PlayerInfo;
+use uramnoil\pmmp\playerinfo\PlayerInfo;
 
 class PlayerListCommand extends Command
 {

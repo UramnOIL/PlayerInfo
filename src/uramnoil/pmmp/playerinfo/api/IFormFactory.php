@@ -6,7 +6,7 @@
  * Time: 12:36
  */
 
-namespace uramnoil\pmmp\hellonewformapi\api;
+namespace uramnoil\pmmp\playerinfo\api;
 
 
 use Frago9876543210\EasyForms\forms\CustomForm;

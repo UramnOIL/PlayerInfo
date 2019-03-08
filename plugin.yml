@@ -1,6 +1,7 @@
 name: PlayerInfo
 api: [3.5]
 version: 0.1.0
+main: uramnoil\pmmp\playerinfo\PlayerInfo
 load: POSTWORLD
 author: UramnOIL
 description: I'm using the new FORM-API!

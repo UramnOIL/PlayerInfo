@@ -6,11 +6,11 @@
  * Time: 13:01
  */
 
-namespace uramnoil\pmmp\hellonewformapi\presenter;
+namespace uramnoil\pmmp\playerinfo\presenter;
 
 
 use pocketmine\Player;
-use uramnoil\pmmp\hellonewformapi\api\IFormFactory;
+use uramnoil\pmmp\playerinfo\api\IFormFactory;
 
 interface IPresener
 {
