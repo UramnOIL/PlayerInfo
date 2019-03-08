@@ -27,7 +27,7 @@ class Presenter implements IPresener
 
     public function sendPlayerListForm( Player $source ): void
     {
-        $source->sendForm( $this->factory->createPlayerListForm( Server::getInstance()->getOnlinePlayers() ) );
+        $source->sendForm( $this->factory->createPlayerListForm() );
     }
     public function sendPlayerInfoForm(Player $source, Player $target): void
     {
